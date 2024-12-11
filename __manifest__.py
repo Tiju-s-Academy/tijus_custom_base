@@ -3,7 +3,7 @@
     'version': '17.0.1.0',
     'author': 'Tijus Academy',
     'summary': 'Handle custom settings',
-    'depends': ['hr'],
+    'depends': ['hr','crm'],
     'license': 'LGPL-3',
     'application': False,
 }
