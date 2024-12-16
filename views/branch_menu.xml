@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem
+                id="menu_hr_branch_tree"
+                action="action_branch_view"
+                parent="hr.menu_config_employee"
+                sequence="5"/>
+</odoo>

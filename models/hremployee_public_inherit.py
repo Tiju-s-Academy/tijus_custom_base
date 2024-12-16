@@ -6,3 +6,4 @@ class HrEmployeePublicInherit(models.Model):
 
     agent_number = fields.Char('Voxbay Agent Number')
     related_joinee = fields.Many2one('employee.joining.form',string='Related Joinee')
+    branch_id = fields.Many2one('employee.branch', string='Branch')
