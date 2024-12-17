@@ -4,5 +4,6 @@
                 id="menu_hr_branch_tree"
                 action="action_branch_view"
                 parent="hr.menu_config_employee"
+                name = "Branch"
                 sequence="5"/>
 </odoo>
