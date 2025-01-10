@@ -1,19 +1,12 @@
 from odoo import api, SUPERUSER_ID
 
-def post_init_hook(cr, registry):
-    env = api.Environment(cr, SUPERUSER_ID, {})
+def pre_init_hook(cr):
+    # Clean up task_status field completely
+    cr.execute("SELECT id FROM ir_model_fields WHERE model = 'project.task' AND name = 'task_status'")
+    field_ids = [r[0] for r in cr.fetchall()]
     
-    # Clean up task_status field from ir.model.fields
-    cr.execute("""
-        DELETE FROM ir_model_fields
-        WHERE model = 'project.task' AND name = 'task_status';
-    """)
-    
-    # Clean up mail tracking values
-    cr.execute("""
-        DELETE FROM mail_tracking_value
-        WHERE field = 'task_status';
-    """)
-
-    # Clear the registry cache
-    env.registry.clear_caches()
+    if field_ids:
+        # Remove tracking values
+        cr.execute("DELETE FROM mail_tracking_value WHERE field IN %s", (tuple(field_ids),))
+        # Remove field
+        cr.execute("DELETE FROM ir_model_fields WHERE id IN %s", (tuple(field_ids),))

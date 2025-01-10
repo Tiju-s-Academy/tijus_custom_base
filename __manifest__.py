@@ -14,5 +14,5 @@
     ],
     'license': 'LGPL-3',
     'application': False,
-    'post_init_hook': 'post_init_hook',
+    'pre_init_hook': 'pre_init_hook',  # Changed from post_init_hook
 }
