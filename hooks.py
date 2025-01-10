@@ -10,3 +10,5 @@ def pre_init_hook(cr):
         cr.execute("DELETE FROM mail_tracking_value WHERE field IN %s", (tuple(field_ids),))
         # Remove field
         cr.execute("DELETE FROM ir_model_fields WHERE id IN %s", (tuple(field_ids),))
+        # Remove mail tracking fields
+        cr.execute("DELETE FROM mail_message WHERE tracking_value_ids @> %s", (tuple(field_ids),))
