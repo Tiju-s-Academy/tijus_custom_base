@@ -6,9 +6,8 @@
             <field name="sequence">35</field>
             <field name="name">Hold</field>
             <field name="fold">false</field>
-            <field name="legend_blocked">Task is on hold</field>
-            <field name="legend_done">Task is on hold</field>
-            <field name="legend_normal">Task is on hold</field>
+            <field name="description">Task is currently on hold</field>
+            <field name="mail_template_id" eval="False"/>
         </record>
 
         <!-- Pending Stage -->
@@ -16,9 +15,8 @@
             <field name="sequence">45</field>
             <field name="name">Pending</field>
             <field name="fold">false</field>
-            <field name="legend_blocked">Task is pending</field>
-            <field name="legend_done">Task is pending</field>
-            <field name="legend_normal">Task is pending</field>
+            <field name="description">Task is pending for external input</field>
+            <field name="mail_template_id" eval="False"/>
         </record>
     </data>
 </odoo>
