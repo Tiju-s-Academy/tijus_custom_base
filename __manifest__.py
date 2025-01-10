@@ -3,7 +3,7 @@
     'version': '17.0.1.0',
     'author': 'Tijus Academy',
     'summary': 'Handle custom settings',
-    'depends': ['hr', 'project', 'new_python_model'],
+    'depends': ['hr', 'project'],
     'data': [
         'security/ir.model.access.csv',
         'views/employee_branch_view.xml',
