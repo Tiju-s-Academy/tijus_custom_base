@@ -7,9 +7,10 @@
             <field name="name">Hold</field>
             <field name="fold">false</field>
             <field name="description">Task is currently on hold</field>
-            <field name="mail_template_id" eval="False"/>
             <field name="state">blocked</field>
-            <field name="project_ids" eval="[(4, False, 0)]"/> <!-- Makes stage available for all projects -->
+            <field name="legend_blocked">This task is on hold</field>
+            <field name="legend_done">Task was completed while on hold</field>
+            <field name="legend_normal">This task is on hold</field>
         </record>
 
         <!-- Pending Stage -->
@@ -18,9 +19,10 @@
             <field name="name">Pending</field>
             <field name="fold">false</field>
             <field name="description">Task is pending for external input</field>
-            <field name="mail_template_id" eval="False"/>
             <field name="state">pending</field>
-            <field name="project_ids" eval="[(4, False, 0)]"/> <!-- Makes stage available for all projects -->
+            <field name="legend_blocked">This task is pending</field>
+            <field name="legend_done">Task was completed while pending</field>
+            <field name="legend_normal">This task is pending</field>
         </record>
     </data>
 </odoo>
