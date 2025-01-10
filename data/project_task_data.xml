@@ -7,6 +7,7 @@
             <field name="name">Hold</field>
             <field name="fold">false</field>
             <field name="state">05_hold</field>
+            <field name="legend_normal">Task is on hold</field>
         </record>
 
         <!-- Pending Stage -->
@@ -15,6 +16,7 @@
             <field name="name">Pending</field>
             <field name="fold">false</field>
             <field name="state">06_pending</field>
+            <field name="legend_normal">Task is pending</field>
         </record>
     </data>
 </odoo>

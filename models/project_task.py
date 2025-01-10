@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 class ProjectTask(models.Model):
     _inherit = 'project.task'
@@ -13,7 +13,20 @@ class ProjectTaskType(models.Model):
     _inherit = 'project.task.type'
     _order = 'sequence, id'
 
-    state = fields.Selection(selection_add=[
-        ('05_hold', 'Hold'),
-        ('06_pending', 'Pending')
-    ])
+    @api.model
+    def _get_state_selection(self):
+        # Get original selection
+        selections = self.env['project.task.type']._fields['state'].selection
+        if not selections:
+            selections = []
+        # Add our new states
+        return selections + [
+            ('05_hold', 'Hold'),
+            ('06_pending', 'Pending')
+        ]
+
+    state = fields.Selection(
+        selection=_get_state_selection,
+        string='State',
+        default='01_in_progress'
+    )
