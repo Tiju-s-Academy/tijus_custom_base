@@ -1,11 +1,13 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 class ProjectTask(models.Model):
     _inherit = 'project.task'
 
-    @api.model
-    def _default_stage_id(self):
-        return self.env['project.task.type'].search([], limit=1)
+    task_status = fields.Selection([
+        ('normal', 'Normal'),
+        ('hold', 'Hold'),
+        ('pending', 'Pending')
+    ], string='Task Status', default='normal', tracking=True)
 
 class ProjectTaskType(models.Model):
     _inherit = 'project.task.type'

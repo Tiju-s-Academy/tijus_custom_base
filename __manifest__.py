@@ -6,7 +6,6 @@
     'depends': ['hr', 'project'],
     'data': [
         'security/ir.model.access.csv',
-        'data/project_task_data.xml',  # Move data before views
         'views/employee_branch_view.xml',
         'views/hr_employee_inherit.xml',
         'views/branch_menu.xml',
