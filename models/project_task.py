@@ -20,4 +20,7 @@ class ProjectTaskType(models.Model):
         ('pending', 'Pending'),
         ('done', 'Done'),
         ('cancelled', 'Cancelled')
-    ], default='new')
+    ], default='new', selection_add=[
+        ('05_hold', 'Hold'),
+        ('06_pending', 'Pending')
+    ])
