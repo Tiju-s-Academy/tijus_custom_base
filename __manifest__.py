@@ -9,6 +9,7 @@
         'views/employee_branch_view.xml',
         'views/hr_employee_inherit.xml',
         'views/branch_menu.xml',
+        'data/project_task_data.xml',
     ],
     'license': 'LGPL-3',
     'application': False,
