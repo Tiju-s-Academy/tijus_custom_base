@@ -28,6 +28,9 @@
             <xpath expr="//field[@name='stage_id']" position="replace">
                 <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
             </xpath>
+            <xpath expr="//field[@name='stage_id']" position="after">
+                <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+            </xpath>
         </field>
     </record>
     <!-- List View -->
@@ -37,6 +40,7 @@
         <field name="inherit_id" ref="project.view_task_tree2"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='stage_id']" position="after">
+                <field name="state" optional="show"/>
             </xpath>
         </field>
     </record>
@@ -48,6 +52,7 @@
         <field name="inherit_id" ref="project.view_task_kanban"/>
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('o_kanban_record_top')]" position="inside">
+                <field name="state" widget="badge"/>
             </xpath>
         </field>
     </record>
