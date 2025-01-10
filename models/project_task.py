@@ -13,14 +13,7 @@ class ProjectTaskType(models.Model):
     _inherit = 'project.task.type'
     _order = 'sequence, id'
 
-    state = fields.Selection([
-        ('new', 'New'),
-        ('in_progress', 'In Progress'),
-        ('blocked', 'Hold'),
-        ('pending', 'Pending'),
-        ('done', 'Done'),
-        ('cancelled', 'Cancelled')
-    ], default='new', selection_add=[
+    state = fields.Selection(selection_add=[
         ('05_hold', 'Hold'),
         ('06_pending', 'Pending')
     ])
