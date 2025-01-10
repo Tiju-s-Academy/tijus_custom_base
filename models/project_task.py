@@ -3,6 +3,12 @@ from odoo import models, fields, api
 class ProjectTask(models.Model):
     _inherit = 'project.task'
 
+    task_status = fields.Selection([
+        ('normal', 'Normal'),
+        ('hold', 'Hold'),
+        ('pending', 'Pending')
+    ], string='Task Status', default='normal', tracking=True)
+
     state = fields.Selection([
         ('01_in_progress', 'In Progress'),
         ('02_changes_requested', 'Changes Requested'),
