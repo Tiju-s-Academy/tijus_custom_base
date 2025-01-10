@@ -6,11 +6,7 @@
             <field name="sequence">35</field>
             <field name="name">Hold</field>
             <field name="fold">false</field>
-            <field name="description">Task is currently on hold</field>
             <field name="state">blocked</field>
-            <field name="legend_blocked">This task is on hold</field>
-            <field name="legend_done">Task was completed while on hold</field>
-            <field name="legend_normal">This task is on hold</field>
         </record>
 
         <!-- Pending Stage -->
@@ -18,11 +14,7 @@
             <field name="sequence">45</field>
             <field name="name">Pending</field>
             <field name="fold">false</field>
-            <field name="description">Task is pending for external input</field>
             <field name="state">pending</field>
-            <field name="legend_blocked">This task is pending</field>
-            <field name="legend_done">Task was completed while pending</field>
-            <field name="legend_normal">This task is pending</field>
         </record>
     </data>
 </odoo>
