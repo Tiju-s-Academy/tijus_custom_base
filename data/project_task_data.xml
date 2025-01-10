@@ -8,6 +8,8 @@
             <field name="fold">false</field>
             <field name="description">Task is currently on hold</field>
             <field name="mail_template_id" eval="False"/>
+            <field name="state">blocked</field>
+            <field name="project_ids" eval="[(4, False, 0)]"/> <!-- Makes stage available for all projects -->
         </record>
 
         <!-- Pending Stage -->
@@ -17,6 +19,8 @@
             <field name="fold">false</field>
             <field name="description">Task is pending for external input</field>
             <field name="mail_template_id" eval="False"/>
+            <field name="state">pending</field>
+            <field name="project_ids" eval="[(4, False, 0)]"/> <!-- Makes stage available for all projects -->
         </record>
     </data>
 </odoo>
