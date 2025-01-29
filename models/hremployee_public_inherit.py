@@ -7,4 +7,4 @@ class HrEmployeePublicInherit(models.Model):
     agent_number = fields.Char('Voxbay Agent Number', readonly=False)
     related_joinee = fields.Many2one('employee.joining.form', string='Related Joinee', related='employee_id.related_joinee', readonly=False)
     biometric_no = fields.Char(string='Biometric Code', related='employee_id.biometric_no', readonly=False)
-    voxbay_agent_number_outgoing = fields.Char(string="Voxbay Agent Number Outgoing", readonly=False)
+    # voxbay_agent_number_outgoing = fields.Char(string="Voxbay Agent Number Outgoing", readonly=False)
