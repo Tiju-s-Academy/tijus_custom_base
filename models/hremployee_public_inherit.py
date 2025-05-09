@@ -31,3 +31,5 @@ class HrEmployeePublicInherit(models.Model):
 
     aadhar_card_number = fields.Char(string='Aadhar Card Number')
     pan_card_number = fields.Char(string='Pan Card Number')
+
+    academic_department = fields.Boolean(related='department_id.is_academic', string="Academic Department", store=True)
